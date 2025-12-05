@@ -1,0 +1,12 @@
+# Ignore raw data folders
+raw_data/
+clean_nyc/
+clean_chicago/
+crime_occurrence_per_day/
+nypd_all/
+data_ingest/
+*.csv
+*.parquet
+*.orc
+*.zip
+*.gz
