@@ -144,8 +144,6 @@ Created initial data visualizations:
 Tools used:
 
 * Matplotlib / Seaborn
-* Plotly (optional, for interactive charts)
-* Power BI (dashboard draft)
 
 Visualization outputs stored under:
 
@@ -170,4 +168,109 @@ Deliverables completed:
   * Key observations
   * Early insights
 * Notebook visuals exported into the report
+
+
+
+
+# Machine Learning Model Development Report
+
+ Week 4: Machine Learning Model (Phase 1: Feature Engineering & Training)
+
+ Objective
+
+The goal of Week 4 was to prepare and train initial machine learning models for crime prediction using the daily features dataset.
+
+ 1. Algorithm Selection
+
+Three machine learning algorithms were chosen to compare performance and suitability:
+
+* Random Forest Regressor – ensemble method robust to overfitting, capable of modeling non-linear relationships.
+* Gradient Boosting Regressor – powerful boosting technique suitable for structured data, handles complex patterns.
+* Linear Regression – simple baseline model to provide a reference for comparison.
+
+ 2. Feature Engineering
+
+Key steps included:
+
+* Extracted temporal features from the `date` column:
+
+  * `day`, `month`, `year`
+  * `day_of_week`
+  * `is_weekend` (binary indicator for Saturday/Sunday)
+* Ensured target variable was consistent: `crime_count`.
+* Verified data types and handled missing values (none in this dataset).
+
+Resulting features:
+
+```
+["day", "month", "year", "day_of_week", "is_weekend"]
+```
+
+ 3. Model Training
+
+* Each model was trained on the full dataset (`daily_features.csv`) using the engineered features.
+* Default hyperparameters were used for initial training.
+* Models were serialized using `pickle` for future evaluation and deployment.
+
+Outcome:
+
+* Successfully trained three models and stored them as:
+
+  ```
+  RandomForest.pkl
+  GradientBoosting.pkl
+  LinearRegression.pkl
+  ```
+
+---
+
+ Week 5: Machine Learning Model (Phase 2: Evaluation & Finalization)
+
+ Objective
+
+The goal of Week 5 was to evaluate model performance, compare algorithms, finalize the ML pipeline, and begin writing the final report.
+
+ Model Evaluation
+
+Each model was evaluated using the full dataset with the following metrics:
+
+* R² Score: proportion of variance explained by the model.
+* MAE (Mean Absolute Error): average magnitude of prediction errors.
+* RMSE (Root Mean Squared Error): emphasizes larger errors.
+
+Performance Table:
+
+| Model             | R² Score | MAE    | RMSE   |
+| ----------------- | -------- | ------ | ------ |
+| Random Forest     | 0.983    | 23.93  | 36.61  |
+| Gradient Boosting | 0.941    | 50.65  | 68.42  |
+| Linear Regression | 0.765    | 109.24 | 136.66 |
+
+Interpretation:
+
+* Random Forest performed best across all metrics, achieving the highest R² and lowest MAE & RMSE.
+* Gradient Boosting performed well but was less accurate than Random Forest.
+* Linear Regression showed poor performance due to its simplicity and inability to capture non-linear patterns in the data.
+
+ Model Comparison & Selection
+
+* Random Forest was selected as the final model for deployment due to superior predictive performance.
+* Gradient Boosting may be considered as an alternative if ensemble diversity is needed.
+* Linear Regression serves as a baseline reference.
+
+
+ Real-Time Prediction Dashboard
+
+* A Streamlit dashboard was implemented to:
+
+  * Display KPIs (total records, date range, models available).
+  * Show real-time crime predictions based on user-selected date.
+  * Visualize crime trends over time.
+  * Compare model performance in a table format (R², MAE, RMSE).
+
+
+
+
+
+
 
