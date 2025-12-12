@@ -1,6 +1,7 @@
 # Ignore raw data folders
 raw_data/
 clean_nyc/
+data/daily_features.csv/
 clean_chicago/
 crime_occurrence_per_day/
 nypd_all/
