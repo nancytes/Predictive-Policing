@@ -9,3 +9,4 @@ nypd_all/
 *.orc
 *.zip
 *.gz
+ml_code/models/*.pkl
