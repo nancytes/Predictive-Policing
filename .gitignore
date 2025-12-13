@@ -4,10 +4,8 @@ clean_nyc/
 data/clean_chicago/
 data/clean_nyc/
 clean_chicago/
-crime_occurrence_per_day/
 nypd_all/
 output/merged_data/
-*.csv
 *.parquet
 *.orc
 *.zip
