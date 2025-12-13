@@ -1,7 +1,6 @@
 # Ignore raw data folders
 raw_data/
 clean_nyc/
-data/daily_features.csv/
 data/clean_chicago/
 data/clean_nyc/
 clean_chicago/
@@ -13,5 +12,3 @@ output/merged_data/
 *.orc
 *.zip
 *.gz
-ml_code/models/*.pkl
-models/
