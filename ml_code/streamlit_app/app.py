@@ -280,8 +280,8 @@ available_models = [m for m in models if models[m] is not None]
 # ======================================================
 with st.sidebar:
     st.markdown("## 🚔 Crime Prediction Dashboard")
-    st.markdown("Interactive ML dashboard for crime trend analysis and prediction.")
-    st.markdown("---")
+    # st.markdown("Interactive ML dashboard for crime trend analysis and prediction.")
+    # st.markdown("---")
 
     st.markdown("### 📍 Navigation")
     page = st.radio(
